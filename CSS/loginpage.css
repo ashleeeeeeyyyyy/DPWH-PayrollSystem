@@ -1,0 +1,39 @@
+@font-face{
+    font-family: font1;
+    src: url(../Fonts/Antipasto-RegularTrial.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: font1;
+}
+
+body{
+    background-image: url(../Images/BG5.jpg);
+    background-size: cover;
+    color: #fff;
+}
+
+.login{
+    margin-top: 30px;
+}
+
+.login.login{
+    background: rgba(0, 0, 0, .6);
+}
+
+.login label{
+    font-size: 23px;
+    color: #fff;
+}
+
+.login input{
+    font-size: 20px;
+    color: #fff;
+}
+
+img{
+    height: 25%;
+    width: 25%;
+}

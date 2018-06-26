@@ -1,0 +1,10 @@
+@font-face{
+    font-family: font1;
+    src: url(../Fonts/Renner.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: font1;
+}
