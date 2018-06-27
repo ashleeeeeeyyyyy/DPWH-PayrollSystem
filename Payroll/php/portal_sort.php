@@ -8,13 +8,13 @@
 <html>
 	<head>
 		<title>Payroll Sort</title>
+		<link rel="stylesheet" href="../../CSS/style1.css">
         <link rel="stylesheet" href="../../CSS/font.css">
-		
 	</head>
 
 	<body>
-		<nav class="navbar navbar-inverse">
-            <div class="container-fluid">.
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
                         <span class="icon-bar"></span>
@@ -37,10 +37,10 @@
             </div>
         </nav>
 
-        <h3>Payslip System</h3>
+      	<h2 style="text-align: center;">Payslip System</h2>
         <?php 
             include 'search_main.php';
-		?>
+        ?><br>
 		
 		<?php
 			$sort = $_POST['sort_op'];
@@ -81,10 +81,10 @@
 			}
 		?>
 
-		<table class="table table-bordered">
+		<table class="table table-bordered table-hover table-condensed">
             <div class="table responsive">
                 <thead>
-                    <tr>
+                    <tr class="bg-primary">
                         <th style="text-align: center;">ID</th>
                         <th style="text-align: center;">NAME</th>
                         <th style="text-align: center;">POSITION</th>
@@ -92,8 +92,7 @@
                         <th style="text-align: center;">OFFICE</th>
                         <th style="text-align: center;">ACTION</th>
                     </tr>
-				</thead>
-				
+                </thead>
                 <tbody>
                     <?php
                         $result = $conn->query("SELECT * FROM employees ORDER BY {$sort_var} {$sort_or}");
@@ -107,8 +106,8 @@
                                         <td>".$row['office']."</td>
                                         <td style = 'text-align: center;'><a href= 'portal_view.php?id=".$row['id']."'>View</a></td>
                                       </tr>";
+                                }
                             }
-                        }
                     ?>
                 </tbody>
             </div>

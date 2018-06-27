@@ -45,7 +45,7 @@
         <table class="table table-bordered table-hover table-condensed">
             <div class="table responsive">
                 <thead>
-                    <tr class="">
+                    <tr class="bg-primary">
                         <th style="text-align: center;">ID</th>
                         <th style="text-align: center;">NAME</th>
                         <th style="text-align: center;">POSITION</th>
@@ -67,8 +67,8 @@
                                         <td>".$row['office']."</td>
                                         <td style = 'text-align: center;'><a href= 'portal_view.php?id=".$row['id']."'>View</a></td>
                                       </tr>";
-                                }
                             }
+                        }
                     ?>
                 </tbody>
             </div>

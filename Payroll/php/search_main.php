@@ -7,48 +7,51 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-				<form id="Home" action="portal_sort.php" method="post">
-					<h3>Sort Category</h3>
-						<div class="col-md-3 bg-success">
-							<select class="form-control" name="sort_op">
-									<option>Last Name</option>
-									<option>First Name</option>
-									<option>Middle Name</option>
-									<option>Employee ID</option>
-									<option>Division</option>
-									<option>Office</option>
-									<option>Position</option>
-									<option>Salary Grade</option>
-							</select>
-
-							<select class="form-control" name="sort_or">
-									<option>Ascending</option>
-									<option>Descending</option>
-							</select>
-					
-							<button type="submit" class="btn btn-primary" name="submit">Search</button>
-							
-				</form>
-
-				<form id="Home" action="portal_search.php" method="post">
-					<h3 class="col-md-3">Search Category</h3>
+				<div class="col-md-12">
+					<form id="Home" action="portal_sort.php" method="post">
 						
-							<select class="form-control" name="categ_op_search">
-									<option>Last Name</option>
-									<option>First Name</option>
-									<option>Middle Name</option>
-									<option>Employee ID</option>
-									<option>Division</option>
-									<option>Office</option>
-									<option>Position</option>
-									<option>Salary Grade</option>
-							</select>
+							<div class="col-md-2" style="margin-left:35%;">
+								<h3>Sort Category</h3>
+								<select class="form-control" name="sort_op">
+										<option>Last Name</option>
+										<option>First Name</option>
+										<option>Middle Name</option>
+										<option>Employee ID</option>
+										<option>Division</option>
+										<option>Office</option>
+										<option>Position</option>
+										<option>Salary Grade</option>
+								</select><br>
 
-							<input type="text" class="form-control" name="keyword">
+								<select class="form-control" name="sort_or">
+										<option>Ascending</option>
+										<option>Descending</option>
+								</select><br>
+						
+								<button type="submit" class="btn btn-primary" name="submit">Search</button>
+							</div>
+					</form>
+				
+					<form id="Home" action="portal_search.php" method="post">
+						
+							<div class="col-md-2">
+							<h3>Search Category</h3>
+								<select class="form-control" name="categ_op_search">
+										<option>Last Name</option>
+										<option>First Name</option>
+										<option>Middle Name</option>
+										<option>Employee ID</option>
+										<option>Division</option>
+										<option>Office</option>
+										<option>Position</option>
+										<option>Salary Grade</option>
+								</select><br>
 
-							<button type="submit" class="btn btn-primary" name="submit">Search</button>
-</div>
-				</form>
+								<input type="text" class="form-control" name="keyword" placeholder="Input here"><br>
+								<button type="submit" class="btn btn-primary" name="submit">Search</button>
+							</div>
+					</form>
+				</div>
 			</div>
 		</div>
 	</body>
