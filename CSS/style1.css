@@ -1,0 +1,6 @@
+body{
+    background-image: url(../Images/bgps.jpg);
+    height: 100%;  
+    background-attachment: scroll;  
+    background-size: cover;
+}

@@ -40,7 +40,7 @@
       	<h2 style="text-align: center;">Payslip System</h2>
         <?php 
             include 'search_main.php';
-        ?><br>
+        ?><br><br><br><br>
 		
 		<?php
 			$sort = $_POST['sort_op'];

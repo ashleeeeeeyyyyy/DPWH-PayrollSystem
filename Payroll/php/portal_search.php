@@ -3,10 +3,12 @@
     include '../../Includes/dbconn.php';
     include '../../Includes/bootstrap.php';
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>	
 		<title>Payroll Search</title>
+		<link rel="stylesheet" href="../../CSS/style1.css">
 		<link rel="stylesheet" href="../../CSS/font.css">
 	</head>
 
@@ -38,7 +40,7 @@
         <h2 style="text-align: center;">Payslip System</h2>
         <?php 
             include 'search_main.php';
-        ?><br>
+        ?><br><br><br><br>
 
 		<?php
 			$search = $_POST['categ_op_search'];
@@ -110,6 +112,5 @@
                 </tbody>
             </div>
         </table>
-
 	</body>
 </html>
