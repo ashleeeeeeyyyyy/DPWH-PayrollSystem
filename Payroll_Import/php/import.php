@@ -7,7 +7,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Payroll Import</title>
+        <link rel="stylesheet" href="../../CSS/style1.css">
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -25,6 +26,7 @@
                             <li><a href="portal.php">UPLOAD CSV FILE</a></li>
                             <li><a href="portal.php">DELETE MONTHLY ENTRY</a></li>
                             <li><a href="portal.php">CHECKLIST</a></li>
+                            <li><a href="logout.php">LOGOUT</a></li>
                         </ul>
                     </div>
                 </div>

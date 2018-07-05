@@ -2,14 +2,13 @@
 	session_start();
 	if (isset($_SESSION['username'])) {
 		header('Location: php/import_form.php');
-		# code...
 	}
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>DPWH-CAR Payroll Summary</title>
+		<title>DPWH-CAR Payroll Import</title>
 		<?php
 			include '../Includes/login_link.php';
 		?>
@@ -24,7 +23,7 @@
 							<img src="../IMAGES/logo.png">
 							<h2>
 								DPWH<br>	
-								Payroll Summary</h2>
+								Payroll Import</h2>
 						</div>
 
 						<div class="card-content">

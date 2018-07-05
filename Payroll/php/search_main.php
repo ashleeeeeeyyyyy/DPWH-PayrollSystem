@@ -28,7 +28,7 @@
 										<option>Descending</option>
 								</select><br>
 						
-								<button type="submit" class="btn btn-primary" name="submit">Search</button>
+								<button type="submit" class="btn btn-primary" name="submit">Sort</button>
 							</div>
 					</form>
 				

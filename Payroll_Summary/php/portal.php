@@ -1,71 +1,84 @@
+<?php
+    include '../../Includes/session_check.php';
+    include '../../Includes/dbconn.php';
+    include '../../Includes/bootstrap.php';
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<!--
-	<a href="trials.php">Trials</a>
-	-->
-	<title></title>
-	<?php
-		include 'session_check.php';
-		include 'dbconn.php';
-		include 'links.php';
-	?>
-</head>
-	<style type="text/css">
-		#inner_main tr:hover{
-			background: #020066;
-			transition: .2s;
-		}
-	</style>
-<body>
-<?php 
-	include 'search_main.php';
-?>
-<div id="main">
-<div id="inner_main">
-<?php
-	
+	<head>
+		<title>Home</title>
+		<link rel="stylesheet" href="../../CSS/style1.css">
+        <link rel="stylesheet" href="../../CSS/font.css">
+	</head>
 
-	$result = $conn->query("SELECT * FROM employees ORDER BY lastname ASC");
-	    
-	    echo "<table>";
-	    echo "<tr>";
-	    echo "<th>Emp ID</th>";
-	    echo "<th>Full Name</th>";
-	    echo "<th>Division</th>";
-	    echo "<th>Office</th>";
-	    echo "<th>Position</th>";
-	    echo "<th>SG</th>";
-	    echo "<th>View</th>";
-	    echo "<th>Payroll</th>";
-	    echo "<th>Edit</th>";
-	    echo "<th>Delete</th>";
-	    echo "</tr>";
-	    while($row = $result->fetch_assoc()){
-	    	echo '<tr>';
-			echo '<td><input class = "tb_size0" readonly type="text" value="'.$row['id'].'"</input></td>';
-			echo '<td><input class = "tb_size1" readonly type="text" value="'.$row['lastname'].', '.$row['firstname'].' '.$row['middlename'].'"</input></td>';
-			echo '<td><input class = "tb_size2" readonly type="text" value="'.$row['division'].'"</input></td>';
-			echo '<td><input class = "tb_size2" readonly type="text" value="'.$row['office'].'"</input></td>';
-			echo '<td><input class = "tb_size3" readonly type="text" value="'.$row['position'].'"</input></td>';
-			echo '<td><input class = "tb_size4" readonly type="text" value="'.$row['salarygrade'].'"</input></td>';
-			echo '<td><a href = "view_summary.php?id='.$row['id'].'">View</a></td>';
-			echo '<td><a href = "encode.php?id='.$row['id'].'">Encode</a></td>';
-			echo "<td><a href ='edit_employee.php?update={$row['id']}'>Edit</a></td>";
-			echo '<td><a href = "emp_del_confirm.php?id='.$row['id'].'">Delete</a></td>';
-			echo '</tr>';
-	    }
-	    echo "</table>";
-?>
+	<body>
+		<nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="portal.php">HOME</a></li>
+                        <li><a href="emp_add.php">ADD EMPLOYEE</a></li>
+                        <li><a href="monthly_checklist.php">MONTHLY CHECKLIST</a></li>
+                        <li><a href="checklist.php">CHECKLIST</a></li>
+                        <li><a href="annual_report_form.php">ANNUAL REPORT</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+		</nav>
+		
+		<h2 style="text-align: center;">Payslip Summary</h2>
+		<?php 
+			include 'search_main.php';
+		?><br><br><br><br>
 
-	
-</div>
-</div>
-
-<?php
-	include 'universal_footer.php';
-	mysqli_close($conn);
-?>
-</body>
+		<table class="table table-bordered table-hover table-condensed">
+            <div class="table responsive">
+                <thead>
+                    <tr class="bg-primary">
+                        <th style="text-align: center;">EMP ID</th>
+                        <th style="text-align: center;">FULL NAME</th>
+                        <th style="text-align: center;">DIVISION</th>
+                        <th style="text-align: center;">OFFICE</th>
+                        <th style="text-align: center;">POSITION</th>
+						<th style="text-align: center;">SG</th>
+						<th style="text-align: center;">VIEW</th>
+						<th style="text-align: center;">ENCODE</th>
+						<th style="text-align: center;">EDIT</th>
+						<th style="text-align: center;">DELETE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        $result = $conn->query("SELECT * FROM employees ORDER BY lastname ASC");
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+								echo "<tr>
+										<td>".$row['id']."</td>
+										<td>".$row['lastname'].", ".$row['firstname']." ".$row['middle_initial']."</td>
+										<td>".$row['division']."</td>
+										<td>".$row['office']."</td>
+										<td>".$row['position']."</td>
+										<td>".$row['salarygrade']."</td>
+										<td style = 'text-align: center;'><a href = 'view_summary.php?id=".$row['id']."'>View</a></td>
+										<td style = 'text-align: center;'><a href = 'encode.php?id=".$row['id']."'>Encode</a></td>
+										<td><a href = 'edit_employee.php?update={$row['id']}'>Edit</a></td>
+                                        <td><a href = 'emp_del_confirm.php?id=".$row['id']."'>Delete</a></td>
+									</tr>";
+                            }
+                        }
+                    ?>
+                </tbody>
+            </div>
+        </table>
+	</body>
 </html>

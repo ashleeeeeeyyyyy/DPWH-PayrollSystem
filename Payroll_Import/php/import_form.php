@@ -7,8 +7,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <title></title>
+        <title>Payroll Import</title>
+        <link rel="stylesheet" href="../../CSS/style1.css">
     </head>
 
     <body>
@@ -24,9 +24,10 @@
 
                     <div class="collapse navbar-collapse" id="Navbar">
                         <ul class="nav navbar-nav navbar-right">
-                        <li><a href="portal.php">UPLOAD CSV FILE</a></li>
+                            <li><a href="portal.php">UPLOAD CSV FILE</a></li>
                             <li><a href="portal.php">DELETE MONTHLY ENTRY</a></li>
                             <li><a href="portal.php">CHECKLIST</a></li>
+                            <li><a href="logout.php">LOGOUT</a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,7 +38,7 @@
         
         <br>
         <div class="panel panel-default">
-        <h3>Upload CSV File</h3>
+        <h2 style="text-align: center;">Upload CSV File</h2>
         <br>
             <div class="panel-body">
                 <form action="import_exec.php" method="post" enctype="multipart/form-data" id="importFrm">
