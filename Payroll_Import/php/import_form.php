@@ -9,81 +9,71 @@
     <head>
         <title>Payroll Import</title>
         <link rel="stylesheet" href="../../CSS/style1.css">
+        <link rel="stylesheet" href="../../CSS/font.css">
     </head>
 
     <body>
         <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-
-                    <div class="collapse navbar-collapse" id="Navbar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="portal.php">UPLOAD CSV FILE</a></li>
-                            <li><a href="portal.php">DELETE MONTHLY ENTRY</a></li>
-                            <li><a href="portal.php">CHECKLIST</a></li>
-                            <li><a href="logout.php">LOGOUT</a></li>
-                        </ul>
-                    </div>
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-            </nav>
 
-    <div class="container">
-        <br>
-        
-        <br>
-        <div class="panel panel-default">
-        <h2 style="text-align: center;">Upload CSV File</h2>
-        <br>
-            <div class="panel-body">
-                <form action="import_exec.php" method="post" enctype="multipart/form-data" id="importFrm">
-                <table class="import">
-                    <tr>
-                        <td colspan="2"><input style="height: 20px;" type="file" name="file" /></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Select Month: </label>
-                        </td>
-                        <td>
-                            <select name="month">
-                                <option>----------</option>
-                                <option>January</option>
-                                <option>February</option>
-                                <option>March</option>
-                                <option>April</option>
-                                <option>May</option>
-                                <option>June</option>
-                                <option>July</option>
-                                <option>August</option>
-                                <option>September</option>
-                                <option>October</option>
-                                <option>November</option>
-                                <option>December</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Input Year: </label></td>
-                        <td><input type="text" name="year"></input></td>
-                    </tr>
-                    <tr>
-                        <td></label></td>
-                        <td><input style="height: 20px;" type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT"></input></td>
-                    </tr>
-                </table>
-            
-                </form>
-                <br>
-                <br>
-            
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="import_form.php">UPLOAD CSV FILE</a></li>
+                        <li><a href="delete_monthly.php">DELETE MONTHLY ENTRY</a></li>
+                        <li><a href="checklist.php">CHECKLIST</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
+        </nav>
+
+        <h2 style="text-align:center;">Import Form</h2><hr>
+
+        <table class="import">
+            <div class="container-fluid">
+                <div class="row">
+                    <form action="import_exec.php" method="post" enctype="multipart/form-data" id="importFrm">
+                        <div class="col-md-12">
+                            <div class="col-md-2" style="margin-left:42%;">
+                                <h3 style="text-align:center;">Select Month</h3>
+                                <select class="form-control" name="categ_op_search">
+                                    <option>---------------------------------------------------------</option>
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>
+
+                                <h3 style="text-align:center;">Input Year</h3>
+                                <input type="text" class="form-control" name="year" placeholder="Input here"><br>
+                            </div>
+                                
+                            <div class="col-md-6" style="margin-left:42%;">
+                                <input style="height: 20px;" type="file" name="file" class>
+                            </div>
+
+                            <div class="col-md-6" style="margin-left:47%; margin-top:1%;">
+                                <button type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">Import</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </table>
     </body>
 </html>

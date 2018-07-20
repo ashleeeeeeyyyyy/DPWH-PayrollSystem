@@ -1,58 +1,61 @@
+<?php
+    include '../../Includes/session_check.php';
+    include '../../Includes/dbconn.php';
+    include '../../Includes/bootstrap.php';
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<!--
-	<a href="trials.php">Trials</a>
-	-->
-	<title></title>
-	<?php
-		include 'session_check.php';
-		include 'dbconn.php';
-		include 'links.php';
-	?>
-</head>
-	<!--
-	<style type="text/css">
-		#inner_main tr:hover{
-			background: #020066;
-			transition: .2s;
-		}
-	</style>
-	-->
-<body>
-<h3>List View</h3>
-<?php 
-	include 'search_main.php';
-?>
-<div id="main">
-<div id="inner_main">
-<div>
-	<h3>List View</h3>
-		<form id="Home" action="list_view_exec.php" method="post">
-	
-	<table>
-	<tr>
-		<td>Year: </td>
-		<td><input type="text" maxlength = "4" name="year"></input><input type="submit" value="Go"></input></td>
-	</tr>
-	</table>
+	<head>
+		<title>List View</title>
+		<link rel="stylesheet" href="../../CSS/style1.css">
+        <link rel="stylesheet" href="../../CSS/font.css">
+	</head>
 
-	</form>
-	<hr>
-	</div>
-	<?php 
-		include 'list_view_ss_menu.php';
-	 ?>
+	<body>
+		<nav class="navbar navbar-expand-sm navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
+                <div class="collapse navbar-collapse" id="Navbar">
+					<ul class="nav navbar-nav navbar-right">
+                        <li><a href="portal.php">HOME</a></li>
+                        <li><a href="payslip_per_div.php">DIVISION PAYSLIP</a></li>
+                        <li><a href="payslip.php">PAYSLIP</a></li>
+                        <li><a href="no_payslip.php">NO PAYSLIP</a></li>
+                        <li><a href="indi_payslip.php">YEARLY INDIVIDUAL</a></li>
+                        <li><a href="list_view.php">VIEW LIST</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+		</nav>
 
+		<h2 style="text-align: center;">List View</h2><hr>
 
+		<div class="container-fluid">
+			<div class="row">
+				<form id="Home" action="list_view_exec.php" method="post">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-md-2" style="margin-left:42%;">
+								<h3 style="text-align: center;">Input Year</h3>
+								<input type="text" class="form-control" maxlength = "4" name="year" placeholder="INPUT YEAR HERE"><br>
+							</div>
 
-</div>
-</div>
-
-<?php
-	include 'universal_footer.php';
-	mysqli_close($conn);
-?>
-</body>
+							<div class="col-md-6" style="margin-left:47%;">
+								<button type="submit" class="btn btn-primary" name="submit" value="Go">Search</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
 </html>

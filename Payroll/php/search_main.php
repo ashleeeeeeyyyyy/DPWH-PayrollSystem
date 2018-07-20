@@ -13,19 +13,20 @@
 							<div class="col-md-2" style="margin-left:35%;">
 								<h3>Sort Category</h3>
 								<select class="form-control" name="sort_op">
-										<option>Last Name</option>
-										<option>First Name</option>
-										<option>Middle Name</option>
-										<option>Employee ID</option>
-										<option>Division</option>
-										<option>Office</option>
-										<option>Position</option>
-										<option>Salary Grade</option>
+									<option>---------------------------------------------------</option>
+									<option>Last Name</option>
+									<option>First Name</option>
+									<option>Middle Name</option>
+									<option>Employee ID</option>
+									<option>Division</option>
+									<option>Office</option>
+									<option>Position</option>
+									<option>Salary Grade</option>
 								</select><br>
 
 								<select class="form-control" name="sort_or">
-										<option>Ascending</option>
-										<option>Descending</option>
+									<option>Ascending</option>
+									<option>Descending</option>
 								</select><br>
 						
 								<button type="submit" class="btn btn-primary" name="submit">Sort</button>
@@ -37,14 +38,15 @@
 							<div class="col-md-2">
 							<h3>Search Category</h3>
 								<select class="form-control" name="categ_op_search">
-										<option>Last Name</option>
-										<option>First Name</option>
-										<option>Middle Name</option>
-										<option>Employee ID</option>
-										<option>Division</option>
-										<option>Office</option>
-										<option>Position</option>
-										<option>Salary Grade</option>
+									<option>---------------------------------------------------</option>
+									<option>Last Name</option>
+									<option>First Name</option>
+									<option>Middle Name</option>
+									<option>Employee ID</option>
+									<option>Division</option>
+									<option>Office</option>
+									<option>Position</option>
+									<option>Salary Grade</option>
 								</select><br>
 
 								<input type="text" class="form-control" name="keyword" placeholder="Input here"><br>

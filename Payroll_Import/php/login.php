@@ -1,6 +1,6 @@
 <?php
 	session_start();
-		include 'dbconn.php';
+		include '../../Includes/dbconn.php';
 		$username = $_POST['uname'];
 		$password = $_POST['pword'];
 		$query = 'SELECT * FROM user WHERE username="' . $username . '" AND password="' . $password.'";';
@@ -10,12 +10,7 @@
 	        
 	        $_SESSION['username'] = $row['username'];
 	        $_SESSION['password'] = $row['password'];
-			//$_SESSION['scope'] = $row['scope'];
-	        //$_SESSION['logged'] = TRUE;
-	        //$_SESSION['id'] = $row['iduser'];
-	        //$_SESSION['full_name'] = $row['first_name'].' '.$row['middle_name'].' '.$row['last_name'];
-	        //$_SESSION['title'] = 'RAUT'. $row['scope'];
-	        header("Location: import_form.php");
+	        header("Location: portal.php");
 		}else{
 			echo "<script>alert('Invalid Credentials! Please Enter Again.');window.location.href='../';</script>";
 			exit();

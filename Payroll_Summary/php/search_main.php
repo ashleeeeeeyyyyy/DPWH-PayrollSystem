@@ -12,6 +12,7 @@
 						<div class="col-md-2" style="margin-left:35%;">
 							<h3>Sort Category</h3>
 							<select class="form-control" name="sort_op">
+								<option>---------------------------------------------------</option>
 								<option>Employee ID</option>
 								<option>Last Name</option>
 								<option>First Name</option>
@@ -19,7 +20,7 @@
 								<option>Division</option>
 								<option>Position</option>
 								<option>Salary Grade</option>
-								<option>Leave Type (For Absences Only)</option>
+
 							</select><br>
 
 							<select class="form-control" name="sort_or">
@@ -35,6 +36,7 @@
 						<div class="col-md-2">
 							<h3>Search Category</h3>
 							<select class="form-control" name="categ_op_search">
+								<option>---------------------------------------------------</option>
 								<option>Employee ID</option>
 								<option>Last Name</option>
 								<option>First Name</option>

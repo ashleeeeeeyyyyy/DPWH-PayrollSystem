@@ -1,26 +1,44 @@
+<?php
+    include '../../Includes/session_check.php';
+    include '../../Includes/dbconn.php';
+    include '../../Includes/bootstrap.php';
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-	<?php
-		include 'session_check.php';
-		include 'dbconn.php';
-		include 'links.php';
-	?>
-</head>
-<body>
-<?php 
-	include 'search_main.php';
-?>
-<div id="sub">
-<br>
-<h3>Input Month and Year to Delete from Records</h3>
-<br>
-<form id="Home" action="monthly_checklist_exec.php" method="post">
-	
-<?php
+	<head>
+		<title>Confirm Delete Monthly</title>
+		<link rel="stylesheet" href="../../CSS/style1.css">
+		<link rel="stylesheet" href="../../CSS/font.css">
+	</head>
 
-$month = $_POST['month'];
+	<body>
+		<nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="import_form.php">UPLOAD CSV FILE</a></li>
+                        <li><a href="delete_monthly.php">DELETE MONTHLY ENTRY</a></li>
+                        <li><a href="checklist.php">CHECKLIST</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+		<h2 style="text-align:center;">Confirm Delete Monthly</h2><hr>
+
+		<form id="Home" action="monthly_checklist_exec.php" method="post">
+		<?php
+		$month = $_POST['month'];
 $year = $_POST['year'];
 $month_var;
 
@@ -74,14 +92,6 @@ if ($month == 'January') {
 		echo "<h3><a href='delete_monthly.php'>Go Back</a></h3>";
 }
 ?>
-
-</form>
-<hr>
-</div>
-
-<?php
-	include 'universal_footer.php';
-	mysqli_close($conn);
-?>
-</body>
+		</form>
+	</body>
 </html>

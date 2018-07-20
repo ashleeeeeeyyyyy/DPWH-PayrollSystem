@@ -1,108 +1,106 @@
+<?php
+    include '../../Includes/session_check.php';
+    include '../../Includes/dbconn.php';
+    include '../../Includes/bootstrap.php';
+?>
+
 <!DOCTYPE html>
 <html>
-<head>
-	<!--
-	<a href="trials.php">Trials</a>
-	-->
-	<title></title>
-	<?php
-		include 'session_check.php';
-		include 'dbconn.php';
-		include 'links.php';
-	?>
-</head>
-	<!--
-	<style type="text/css">
-		#inner_main tr:hover{
-			background: #020066;
-			transition: .2s;
-		}
-	</style>
-	-->
-<body>
-<h3>Payslip</h3>
-<?php 
-	include 'search_main.php';
-?>
-<div id="main">
-<div id="inner_main">
-<div>
-	<h3>List View</h3>
-		<form id="Home" action="list_view_exec.php" method="post">
-	
-	<table>
-	<tr>
-		<td>Year: </td>
-		<td><input type="text" maxlength = "4" name="year"></input><input type="submit" value="Go"></input></td>
-	</tr>
-	</table>
+	<head>
+		<title>List View</title>
+		<link rel="stylesheet" href="../../CSS/style1.css">
+        <link rel="stylesheet" href="../../CSS/font.css">
+	</head>
 
-	</form>
-	<hr>
-	</div>
-	<?php 
-		include 'list_view_ss_menu.php';
-	 ?>
-	<div id="list_view">
-	<?php
-		$year = $_POST['year'];
-	    $result2 = $conn->query("SELECT * FROM employees ORDER BY lastname ASC ");
+	<body>
+		<nav class="navbar navbar-expand-sm navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
+                <div class="collapse navbar-collapse" id="Navbar">
+					<ul class="nav navbar-nav navbar-right">
+                        <li><a href="portal.php">HOME</a></li>
+                        <li><a href="payslip_per_div.php">DIVISION PAYSLIP</a></li>
+                        <li><a href="payslip.php">PAYSLIP</a></li>
+                        <li><a href="no_payslip.php">NO PAYSLIP</a></li>
+                        <li><a href="indi_payslip.php">YEARLY INDIVIDUAL</a></li>
+                        <li><a href="list_view.php">VIEW LIST</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+		</nav>
 
-	    if ($year == "") {
-	    	# code...
-	    	echo "<h3>Please Enter Year<h3>";
-	    }else{
+		<h2 style="text-align: center;">Input Year to View</h2><hr>
 
-	    echo "<h3>Existing Payslips for ".$year."</h3>";
-	    echo "<br>";
-	    echo "<table>";
-	    echo "<tr>";
-	    echo "<th>ID</th>";
-	    echo "<th>Full Name</th>";
-	    echo "<th>Position</th>";
-	    echo "<th>Division</th>";
-	    echo "<th>Office</th>";
-	    echo "<th>Months</th>";
-	    echo "<th>Entries</th>";
-	    echo "</tr>";
-	    
-	    while($row = $result2->fetch_assoc()){
-	    	
-	    		# code...
-	    	echo '<tr>';
-	    	echo '<td><input class = "tb_size_small" readonly type="text" value="'.$row['id'].'"</input></td>';
-			echo '<td><input class = "tb_size_medium" readonly type="text" value="'.$row['lastname'].', '.$row['firstname'].' '.$row['middlename'].'"</input></td>';
-			echo '<td><input class = "tb_size_medium" readonly type="text" value="'.$row['position'].'"</input></td>';
-			echo '<td><input class = "tb_size_small" readonly type="text" value="'.$row['division'].'"</input></td>';
-			echo '<td><input class = "tb_size_small" readonly type="text" value="'.$row['office'].'"</input></td>';
-	   		echo '<td><input class = "tb_size10" readonly type="text" value="';
-	   		$result3 = $conn->query("SELECT * FROM payroll_data LEFT JOIN employees ON payroll_data.id = employees.id WHERE employees.id ='".$row['id']."' AND payroll_data.year = '".$year."' ORDER BY month_num ASC");
-	   		
-	   		while($row2 = $result3->fetch_assoc()){
-	   			echo $row2['month'].", ";
-	   		}
+		<?php 
+            include 'search_main.php';
+        ?><hr>
 
-	   		echo '"</input></td>';
-	   		echo "<td style = 'text-align: center;'>".$result3->num_rows."</td>";
-	   		//echo "<td><a href = 'view_individually.php?id=".$row['id']."&year=".$row['year']."'>View</a></td>";
-	    	echo '</tr>';
-	   		
-			//echo "<td><a href ='edit_employee.php?update={$row['id']}'>Edit</a></td>";
-			//echo "<td><a href ='view_monthly.php?id={$row['id']}'>View Annual Report</a></td>";
-			
-	    }
-	    echo "</table>";
-	}
-	    ?>
-</div>
+		<div class="container-fluid">
+			<div class="row">
+				<form id="Home" action="list_view_exec.php" method="post">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-md-2" style="margin-left:42%;">
+								<h3 style="text-align: center;">Input Year</h3>
+								<input type="text" class="form-control" maxlength = "4" name="year" placeholder="INPUT YEAR HERE"><br>
+							</div>
 
-</div>
-</div>
+							<div class="col-md-6" style="margin-left:47%;">
+								<button type="submit" class="btn btn-primary" name="submit" value="Go">Search</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div><hr>
 
-<?php
-	include 'universal_footer.php';
-	mysqli_close($conn);
-?>
-</body>
+		<table class="table table-bordered table-hover table-condensed">
+			<div class="table responsive">
+				<thead-dark>
+                    <tr class="bg-primary">
+						<th style="text-align: center;">ID</th>
+						<th style="text-align: center;">FULL NAME</th>
+						<th style="text-align: center;">POSITION</th>
+						<th style="text-align: center;">DIVISION</th>
+						<th style="text-align: center;">OFFICE</th>
+                        <th style="text-align: center;">MONTHS</th>
+                        <th style="text-align: center;">ENTRIES</th>
+                    </tr>
+				</thead>
+				<tbody>
+					<?php
+						$year = $_POST['year'];
+						$result2 = $conn->query("SELECT * FROM employees ORDER BY lastname ASC ");
+						echo "<h3 style='text-align: center;'>Existing Records for ".$year."</h3>";
+
+						while($row = $result2->fetch_assoc()){
+							echo '<td style="width:1%;">'.$row['id'].'</td>';
+							echo '<td style="width:20%;">'.$row['lastname'].', '.$row['firstname'].' '.$row['middlename'].'</td>';
+							echo '<td style="width:8%;">'.$row['position'].'</td>';
+							echo '<td style="width:8%;">'.$row['division'].'</td>';
+							echo '<td style="width:10%;">'.$row['office'].'</td>';
+							echo '<td><input class = form-control readonly type="text" value="';
+							   $result3 = $conn->query("SELECT * FROM payroll_data LEFT JOIN employees ON payroll_data.id = employees.id WHERE employees.id ='".$row['id']."' AND payroll_data.year = '".$year."' ORDER BY month_num ASC");
+							   
+							   while($row2 = $result3->fetch_assoc()){
+								   echo $row2['month'].", ";
+							   }
+							   echo '"</input></td>';
+							   echo "<td style='width:1%; text-align: center;'>".$result3->num_rows."</td>";
+							echo '</tr>';
+						}
+						echo "</table>";
+					?>
+				</tbody>
+			</div>
+		</table>
+	</body>
 </html>

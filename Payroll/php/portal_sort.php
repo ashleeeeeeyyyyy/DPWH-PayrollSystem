@@ -37,10 +37,11 @@
             </div>
         </nav>
 
-      	<h2 style="text-align: center;">Payslip System</h2>
+          <h2 style="text-align: center;">Payslip System</h2><hr>
+          
         <?php 
             include 'search_main.php';
-        ?><br><br><br><br>
+        ?><hr>
 		
 		<?php
 			$sort = $_POST['sort_op'];

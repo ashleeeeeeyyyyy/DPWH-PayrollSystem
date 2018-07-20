@@ -37,46 +37,32 @@
             </div>
         </nav>
         
-        <h2 style="text-align: center;">Payslip System</h2>
+        <h2 style="text-align: center;">Payslip System</h2><hr>
+
         <?php 
             include 'search_main.php';
-        ?><br><br><br><br>
+        ?><hr>
 
 		<?php
 			$search = $_POST['categ_op_search'];
 			$search_var;
 			$keyword = $_POST['keyword'];
-							//<option>Employee ID</option>
-							//<option>Last Name</option>
-							//<option>First Name</option>
-							//<option>Middle Name</option>
-							//<option>Division</option>
-							//<option>Office</option>
-							//<option>Position</option>
-							//<option>Salary Grade</option>
+
 			if ($search == "Employee ID") {
-				# code...
 				$search_var = 'id';
 			}elseif ($search == "Last Name") {
-				# code...
 				$search_var = 'lastname';
 			}elseif ($search == "First Name") {
-				# code...
 				$search_var = 'firstname';
 			}elseif ($search == "Middle Name") {
-				# code...
 				$search_var = 'middlename';
 			}elseif ($search == "Division") {
-				# code...
 				$search_var = 'division';
 			}elseif ($search == "Office") {
-				# code...
 				$search_var = 'office';
 			}elseif ($search == "Position") {
-				# code...
 				$search_var = 'position';
 			}elseif ($search == "Salary Grade") {
-				# code...
 				$search_var = 'salarygrade';
 			}
 			?>

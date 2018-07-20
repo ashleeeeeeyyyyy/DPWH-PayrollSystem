@@ -13,7 +13,7 @@
     </head>
     
     <body>
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-expand-sm navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
@@ -28,7 +28,7 @@
                         <li><a href="portal.php">HOME</a></li>
                         <li><a href="portal.php">DEDUCTIONS</a></li>
                         <li><a href="portal.php">EDIT SALARY</a></li>
-                        <li><a href="salary_grades.php">SALARY GRADES</a></li>
+                        <li><a href="portal.php">SALARY GRADES</a></li>
                         <li><a href="portal.php">BONUSES</a></li>
                         <li><a href="portal.php">TAX</a></li>
                         <li><a href="logout.php">LOGOUT</a></li>
@@ -37,10 +37,11 @@
             </div>
         </nav>
         
-        <h2 style="text-align: center;">Payslip System</h2>
+        <h2 style="text-align: center;">Payslip System</h2><hr>
+
         <?php 
             include 'search_main.php';
-        ?><br><br><br><br>
+        ?><hr>
 
         <table class="table table-bordered table-hover table-condensed">
             <div class="table responsive">

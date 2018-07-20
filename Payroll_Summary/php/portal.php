@@ -36,10 +36,11 @@
             </div>
 		</nav>
 		
-		<h2 style="text-align: center;">Payslip Summary</h2>
+        <h2 style="text-align: center;">Payslip Summary</h2><hr>
+        
 		<?php 
 			include 'search_main.php';
-		?><br><br><br><br>
+		?><hr>
 
 		<table class="table table-bordered table-hover table-condensed">
             <div class="table responsive">
@@ -63,16 +64,16 @@
                         if($result->num_rows > 0){
                             while($row = $result->fetch_assoc()){
 								echo "<tr>
-										<td>".$row['id']."</td>
+										<td style = 'text-align: center;'>".$row['id']."</td>
 										<td>".$row['lastname'].", ".$row['firstname']." ".$row['middle_initial']."</td>
-										<td>".$row['division']."</td>
-										<td>".$row['office']."</td>
-										<td>".$row['position']."</td>
-										<td>".$row['salarygrade']."</td>
+										<td style = 'text-align: center;'>".$row['division']."</td>
+										<td style = 'text-align: center;'>".$row['office']."</td>
+										<td style = 'text-align: center;'>".$row['position']."</td>
+										<td style = 'text-align: center;'>".$row['salarygrade']."</td>
 										<td style = 'text-align: center;'><a href = 'view_summary.php?id=".$row['id']."'>View</a></td>
 										<td style = 'text-align: center;'><a href = 'encode.php?id=".$row['id']."'>Encode</a></td>
-										<td><a href = 'edit_employee.php?update={$row['id']}'>Edit</a></td>
-                                        <td><a href = 'emp_del_confirm.php?id=".$row['id']."'>Delete</a></td>
+										<td style = 'text-align: center;'><a href = 'edit_employee.php?update={$row['id']}'>Edit</a></td>
+                                        <td style = 'text-align: center;'><a href = 'emp_del_confirm.php?id=".$row['id']."'>Delete</a></td>
 									</tr>";
                             }
                         }

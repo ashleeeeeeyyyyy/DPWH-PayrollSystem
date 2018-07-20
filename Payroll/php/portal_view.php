@@ -37,10 +37,9 @@
             </div>
         </nav>
         
-        <h2 style="text-align: center;">Payslip System</h2>
-		<br><br><br>
+        <h2 style="text-align: center;">Payslip System</h2><hr>
 
-		<table class="table table-bordered table-hover table-condensed">
+		<table class="table table-bordered table-condensed">
             <div class="table responsive">
                 <thead>
                     <tr class="bg-primary">
@@ -70,35 +69,38 @@
             </div>
 		</table><br>
 		
-		<table class="table table-bordered table-hover table-condensed">
-            <div class="table responsive">
-                <thead>
+		<table class="table table-bordered table-condensed">
+			<div class="table responsive">
+				<thead-dark>
                     <tr class="bg-primary">
-                        <th style="text-align: center;">YEAR</th>
+						<th style="text-align: center;">YEAR</th>
                         <th style="text-align: center;">MONTHS</th>
                         <th style="text-align: center;">ENTRIES</th>
+                        <th style="text-align: center;">ACTION</th>
                     </tr>
-                </thead>
-                <tbody>
-				<h2 style="text-align: center;">Current Records</h2>
+				</thead>
+				<tbody>
+					<h3 style="text-align: center;">Current Records</h3>
 					<?php
 						$id = $_GET['id'];
 						$result2 = $conn->query("SELECT DISTINCT payroll_data.year FROM payroll_data LEFT JOIN employees ON payroll_data.id = employees.id WHERE employees.id ='".$id."' ORDER BY payroll_data.year DESC ");
 						while($row = $result2->fetch_assoc()){
-							echo "<tr>
-							<td>".$row['year']."</td>
-							</tr>";	
+							echo '<td style="text-align: center;"><label>'.$row['year'].'</label></td>';
+							echo '<td style="width:70%;"><input class = form-control readonly type="text" value="';
+							$result3 = $conn->query("SELECT * FROM payroll_data LEFT JOIN employees ON payroll_data.id = employees.id WHERE employees.id ='".$id."' AND year = ".$row['year']." ORDER BY month_num ASC");
+							
+							while($row2 = $result3->fetch_assoc()){
+								echo $row2['month'].", ";
+							}
+							echo '"</input></td>';
+							echo "<td style='text-align: center;'>".$result3->num_rows."</td>";
+							echo "<td style='text-align: center;'><a href = 'view_individually.php?id=".$id."&year=".$row['year']."'>View</a></td>";
+							echo '</tr>';
 						}
-						$result = $conn->query("SELECT * FROM employees WHERE id = '{$id}'");
-						while ($row = $result->fetch_assoc()) {
-							echo "<tr>
-							<td></td>
-							<td>".$row['id']."</td>
-							 </td>";
-						}
+						echo "</table>";
 					?>
-                </tbody>
-            </div>
-		</table><br>	
+				</tbody>
+			</div>
+		</table>
 	</body>
 </html>

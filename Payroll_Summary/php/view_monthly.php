@@ -1,15 +1,14 @@
+<?php
+    include '../../Includes/session_check.php';
+    include '../../Includes/dbconn.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<?php
-		include 'session_check.php';
-		include 'dbconn.php';
-		include 'links.php';
-	?>
 </head>
-<button onclick="myFunction()" class="print">Save as PDF</button>
 
+<button onclick="myFunction()" class="print">Save as PDF</button>
 		<script>
 		function myFunction() {
 		    window.print();
@@ -20,6 +19,7 @@
 		});
 		</script>
 <body>
+
 <?php 
 	//include 'search_main.php';
 ?>
@@ -31,7 +31,6 @@
 	$year = $_POST['year'];
 	echo "<a class = 'hide' href = view_summary.php?id=".$id.">Go Back</a>";
 	$result = $conn->query("SELECT * FROM employees WHERE id ='".$id."'");
-	   
 	    while($row2 = $result->fetch_assoc()){
 	    	echo "<div class = 'page-break'>";
 	    	echo "<h3>".$year." Payroll Summary Record</h3>";
@@ -289,10 +288,5 @@
 	
 
 </div>
-
-<?php
-	//include 'universal_footer.php';
-	mysqli_close($conn);
-?>
 </body>
 </html>

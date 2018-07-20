@@ -31,9 +31,6 @@
                     </div>
                 </div>
             </nav>
-    <?php 
-        include 'search_main.php';
-    ?>
     <?php
     //load the database configuration file
     error_reporting(0);

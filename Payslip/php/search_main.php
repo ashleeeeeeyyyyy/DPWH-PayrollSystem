@@ -1,122 +1,60 @@
-<table id="main_menu">
-<tr>
-<td>
-<table>
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="../../CSS/font.css">
+	</head>
 
-		<form id="Home" action="portal_sort.php" method="post">
-		<tr>
-			<th colspan="2">Sort</th>
-		</tr>
-		
-		<tr>
-			<td>
-				<label>Sort By: </label>
-			</td>
-			<td>
-				<select name="sort_op">
-					<option>Last Name</option>
-					<option>First Name</option>
-					<option>Middle Name</option>
-					<option>Employee ID</option>
-					<option>Division</option>
-					<option>Office</option>
-					<option>Position</option>
-					<option>Salary Grade</option>
-				</select>
-			</td>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<form id="Home" action="portal_sort.php" method="post">
+						
+							<div class="col-md-2" style="margin-left:35%;">
+								<h3>Sort Category</h3>
+								<select class="form-control" name="sort_op">
+									<option>---------------------------------------------------</option>
+									<option>Last Name</option>
+									<option>First Name</option>
+									<option>Middle Name</option>
+									<option>Employee ID</option>
+									<option>Division</option>
+									<option>Office</option>
+									<option>Position</option>
+									<option>Salary Grade</option>
+								</select><br>
 
-			
-		</tr>
-		<tr>
-			<td>
-				<label>Order: </label>
-			</td>
-			<td>
-				<select name="sort_or">
-					<option>Ascending</option>
-					<option>Descending</option>
-				</select>
-			</td>
-
-			
-		</tr>
-		
-
-		<tr>
-			<td>
-				<label>Action: </label>
-			</td>
-
-			<td>
+								<select class="form-control" name="sort_or">
+									<option>Ascending</option>
+									<option>Descending</option>
+								</select><br>
+						
+								<button type="submit" class="btn btn-primary" name="submit">Sort</button>
+							</div>
+					</form>
 				
-				<input class = "srbtn" type="submit" name = "submit" value="Go"></input>
-				
-			</td>
-			
-		</tr>
-		</form>
+					<form id="Home" action="portal_search.php" method="post">
+						
+							<div class="col-md-2">
+							<h3>Search Category</h3>
+								<select class="form-control" name="categ_op_search">
+									<option>---------------------------------------------------</option>
+									<option>Last Name</option>
+									<option>First Name</option>
+									<option>Middle Name</option>
+									<option>Employee ID</option>
+									<option>Division</option>
+									<option>Office</option>
+									<option>Position</option>
+									<option>Salary Grade</option>
+								</select><br>
 
-
-
-	</table>
-	</td>
-	<td>
-	<table>
-		<form id="Home" action="portal_search.php" method="post">
-		<tr>
-			<th colspan="2">Search</th>
-		</tr>
-		
-		<tr>
-			<td>
-				<label>Search Category: </label>
-			</td>
-			<td>
-				<select name="categ_op_search">					
-					<option>Last Name</option>
-					<option>First Name</option>
-					<option>Middle Name</option>
-					<option>Employee ID</option>
-					<option>Division</option>
-					<option>Office</option>
-					<option>Position</option>
-					<option>Salary Grade</option>
-				</select>
-			</td>
-			<td>
-			</td>
-			
-		</tr>
-
-		
-		<tr>
-			<td>
-				<label>Keyword: </label>
-			</td>
-			<td>
-				<input type="text" name='keyword'></input>
-			</td> 
-
-			
-		</tr>
-
-		<tr>
-			<td>
-				<label>Action: </label>
-			</td>
-
-			<td>
-				
-				<input class = "srbtn" type="submit" value="Go"></input>
-				
-			</td>
-			
-		</tr>
-		</form>
-
-
-
-	</table>
-	</td>
-	</tr>
-	</table>
+								<input type="text" class="form-control" name="keyword" placeholder="Input here"><br>
+								<button type="submit" class="btn btn-primary" name="submit">Search</button>
+							</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
