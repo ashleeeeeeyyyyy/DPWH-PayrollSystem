@@ -4,41 +4,40 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
-
-<button onclick="myFunction()" class="print">Save as PDF</button>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<button onclick="myFunction()" class="print">Save as PDF</button>
 		<script>
-		function myFunction() {
-		    window.print();
-		}
-		$(document).ready(function(){
-			var head = $('table thead tr');
-			$( "tbody tr:nth-child(10n+10)" ).after(head.clone());
-		});
+			function myFunction() {
+		    		window.print();
+			}
+			$(document).ready(function() {
+				var head = $('table thead tr');
+				$( "tbody tr:nth-child(10n+10)" ).after(head.clone());
+			});
 		</script>
-<body>
+		
+		<?php 
+			//include 'search_main.php';
+		?>
 
-<?php 
-	//include 'search_main.php';
-?>
-
-	<table id="annual">
+		<table id="annual">
 	
-	<?php
-	$id = $_GET['id'];
-	$year = $_POST['year'];
-	echo "<a class = 'hide' href = view_summary.php?id=".$id.">Go Back</a>";
-	$result = $conn->query("SELECT * FROM employees WHERE id ='".$id."'");
-	    while($row2 = $result->fetch_assoc()){
-	    	echo "<div class = 'page-break'>";
-	    	echo "<h3>".$year." Payroll Summary Record</h3>";
-	    	//echo "<hr>";
-	    	echo "<table>";
-	    	echo "<tr>";
-	    	echo '<td><label>ID Number: </label></td>';
-			echo '<td><label><b>'.$row2['id'].'</b></label></td>';
+		<?php
+			$id = $_GET['id'];
+			$year = $_POST['year'];
+			echo "<a class = 'hide' href = view_summary.php?id=".$id.">Go Back</a>";
+			$result = $conn->query("SELECT * FROM employees WHERE id ='".$id."'");
+	    		while($row2 = $result->fetch_assoc()) {
+	    			echo "<div class = 'page-break'>";
+	    			echo "<h3>".$year." Payroll Summary Record</h3>";
+	    			//echo "<hr>";
+	    			echo "<table>";
+	    			echo "<tr>";
+	    			echo '<td><label>ID Number: </label></td>';
+				echo '<td><label><b>'.$row2['id'].'</b></label></td>';
 			echo "</tr>";
 			echo "<tr>";
 			echo '<td><label>Full Name: </label></td>';
