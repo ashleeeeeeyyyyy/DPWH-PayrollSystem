@@ -43,7 +43,7 @@
 				<div class="col-md-12">
 				<h3 style="text-align: center;">Select Payroll Summary Record</h3>
 					<div class="col-md-2" style="margin-left:42%;">
-						<form id="Home" action="view_monthly.php?id='.$id.'" method="post">
+						<form id="Home" action="view_monthly.php?id=<?php echo $_GET['id']; ?>" method="post">
 							<input type="text" class="form-control" name="year" maxlength="4" placeholder="Input Year"><br>
 							<button type="submit" class="btn btn-primary center-block" name="submit" value="Go">Search</button>
 						</form>
