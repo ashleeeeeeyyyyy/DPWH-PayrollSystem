@@ -1,6 +1,6 @@
 <?php
 	session_start();
-		require '../../Includes/dbconn.php';
+		include '../../Includes/dbconn.php';
 		$username = $_POST['uname'];
 		$password = $_POST['pword'];
 		$query = 'SELECT * FROM user WHERE username="' . $username . '" AND password="' . $password.'";';
