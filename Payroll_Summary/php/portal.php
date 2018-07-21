@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Home</title>
+		<title>Payroll Summary</title>
 		<link rel="stylesheet" href="../../CSS/style1.css">
         <link rel="stylesheet" href="../../CSS/font.css">
 	</head>

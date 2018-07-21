@@ -37,7 +37,7 @@
             </div>
         </nav>
         
-        <h2 style="text-align: center;">Payslip System</h2><hr>
+        <h2 style="text-align: center;">Payroll System</h2><hr>
 
         <?php 
             include 'search_main.php';

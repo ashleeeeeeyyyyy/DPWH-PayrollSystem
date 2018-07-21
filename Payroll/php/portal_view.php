@@ -37,7 +37,7 @@
             </div>
         </nav>
         
-        <h2 style="text-align: center;">Payslip System</h2><hr>
+        <h2 style="text-align: center;">Payroll System</h2><hr>
 
 		<table class="table table-bordered table-condensed">
             <div class="table responsive">
@@ -57,11 +57,11 @@
 						$result = $conn->query("SELECT * FROM employees WHERE id = '{$id}'");
 						while ($row = $result->fetch_assoc()) {
 							echo "<tr>
-							<td>".$row['id']."</td>
-							<td>".$row['lastname'].", ".$row['firstname']." ".$row['middle_initial']."</td>
-							<td>".$row['position']."</td>
-							<td>".$row['division']."</td>
-							<td>".$row['office']."</td>
+							<td style='text-align: center;'>".$row['id']."</td>
+							<td style='text-align: center;'>".$row['lastname'].", ".$row['firstname']." ".$row['middle_initial']."</td>
+							<td style='text-align: center;'>".$row['position']."</td>
+							<td style='text-align: center;'>".$row['division']."</td>
+							<td style='text-align: center;'>".$row['office']."</td>
 						  </tr>";
 						}
 					?>
@@ -76,7 +76,7 @@
 						<th style="text-align: center;">YEAR</th>
                         <th style="text-align: center;">MONTHS</th>
                         <th style="text-align: center;">ENTRIES</th>
-                        <th style="text-align: center;">ACTION</th>
+
                     </tr>
 				</thead>
 				<tbody>
@@ -94,7 +94,6 @@
 							}
 							echo '"</input></td>';
 							echo "<td style='text-align: center;'>".$result3->num_rows."</td>";
-							echo "<td style='text-align: center;'><a href = 'view_individually.php?id=".$id."&year=".$row['year']."'>View</a></td>";
 							echo '</tr>';
 						}
 						echo "</table>";

@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Home</title>
+		<title>Encode</title>
 		<link rel="stylesheet" href="../../CSS/style1.css">
         <link rel="stylesheet" href="../../CSS/font.css">
 	</head>
@@ -70,24 +70,17 @@
 				</tbody>
 			</div>
 		</table>
-
+		
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
-					<form id="Home" action="view_monthly.php?id='.$id.'" method="post">
-						<div class="col-md-12 text-center">
-							<h3>Select Payroll Summary Record (Print View)</h3>
-							<h3 style="text-align: center;">Input Year:</h3>
-						</div>
-
-						<div class="col-md-2 col-xs-2" style="margin-left:42%;">
-							<input type="text" class="form-control" name="keyword" placeholder="Input here"><br>
-						</div>
-
-						<div class="col-md-12">
-							<button type="submit" class="btn btn-primary center-block" name="submit" value="Go">Select</button>
-						</div>
-					</form>
+				<h3 style="text-align: center;">Select Payroll Summary Record (Print View)</h3>
+					<div class="col-md-2" style="margin-left:42%;">
+						<form id="Home" action="view_monthly.php?id=<?php echo $_GET['id']; ?>" method="post">
+							<input type="text" class="form-control" name="year" maxlength="4" placeholder="Input Year"><br>
+							<button type="submit" class="btn btn-primary center-block" name="submit" value="Go">Search</button>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div><hr>
