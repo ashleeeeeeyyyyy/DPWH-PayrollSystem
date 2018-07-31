@@ -39,8 +39,8 @@
 		<form id="Home" action="monthly_checklist_exec.php" method="post">
 		<?php
 		$month = $_POST['month'];
-$year = $_POST['year'];
-$month_var;
+		$year = $_POST['year'];
+		$month_var;
 
 if ($month == "----------" || $year == "") {
 	# code...

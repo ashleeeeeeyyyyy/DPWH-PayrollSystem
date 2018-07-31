@@ -1,17 +1,16 @@
+<?php
+    include '../../Includes/session_check.php';
+    include '../../Includes/dbconn.php';
+    include '../../Includes/bootstrap.php';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<?php
-		include 'session_check.php';
-		include 'dbconn.php';
-		include 'links.php';
-	?>
+	<title>Delete Monthly</title>
 </head>
 <body>
-<?php 
-	include 'search_main.php';
-?>
+
 <div id="sub">
 <br>
 <br>
@@ -32,10 +31,5 @@ echo "<h3>Successfully deleted</h3>";
 </form>
 <hr>
 </div>
-
-<?php
-	include 'universal_footer.php';
-	mysqli_close($conn);
-?>
 </body>
 </html>

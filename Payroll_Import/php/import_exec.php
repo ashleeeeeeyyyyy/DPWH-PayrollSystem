@@ -12,7 +12,26 @@
     </head>
 
     <body>
-        <a href="test.php"></a>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="import_form.php">UPLOAD CSV FILE</a></li>
+                        <li><a href="delete_monthly.php">DELETE MONTHLY ENTRY</a></li>
+                        <li><a href="checklist.php">CHECKLIST</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
         <div id="main">
             <div id="inner_main">

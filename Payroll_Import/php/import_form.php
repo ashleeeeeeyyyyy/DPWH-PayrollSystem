@@ -43,7 +43,7 @@
                         <div class="col-md-12">
                             <div class="col-md-2" style="margin-left:42%;">
                                 <h3 style="text-align:center;">Select Month</h3>
-                                <select class="form-control" name="categ_op_search">
+                                <select class="form-control" name="month">
                                     <option>---------------------------------------------------------</option>
                                     <option>January</option>
                                     <option>February</option>

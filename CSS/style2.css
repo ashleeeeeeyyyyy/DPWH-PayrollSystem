@@ -1,39 +1,21 @@
-*{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-}
 
-th{
-	background: #020066;
-	color: white;
+*{
+	font-family: Tahoma,Verdana,Segoe,sans-serif; 
+	font-size: 16px;
 }
 
 body{
 	background-image: url('../Images/BG1.jpg');
-    background-repeat: repeat;
-    background-size: 100% 720px;
-}
-
-h3, h2{
-	text-align: center;
-	line-height: 10px;
-}
-
-h2{
-	font-size: 20px;
-	color: #020066;
-}
-
-table{
-	border-spacing: 0;
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 a{
 	background-color: white;
 	text-decoration: none;
 	display: block;
-    width: 50px;
-    height: 10px;
+    width: 100px;
+    height: 15px;
     background: #020066;
     padding: 5px;
     text-align: center;
@@ -52,117 +34,223 @@ a:hover{
 	border: 1px solid black;
 }
 
-input{
-	word-wrap: break-word;
+h1, h2 ,h3, h4, h5{
+	text-align: center !important;
+	margin: auto !important;
+	width: 100% !important;
 }
 
-#main{
-	width: 95%;
+#login_body{
+	width: 300px;
 	margin: auto;
-	height: 490px;
-	border: solid 2px black;
-	overflow: auto;
+	border: solid 1px black;
+	padding: auto;
+	margin-top: 50px;
+}
+#login_form{
+	margin: auto;
+	width: 300px;
+	border: 3px solid black;
+	padding: 10px;
+}
+#main{
+	width: 90%;
+	height: 500px;
+	border: 1px solid black;
+	margin: auto;
 }
 
+#main table{
+	margin: auto;
+}
+#main td{
+	text-align: center;
+}
+#main input{
+	font-size: 12px;
+}
+#main2{
+	width: 90%;
+	height: 500px;
+	border: 1px solid black;
+	overflow: auto;
+	margin: auto;
+}
+#main2 table{
+	margin: auto;
+}
+#main2 td{
+	text-align: left;
+}
+#main2 input{
+	font-size: 12px;
+}
 #main_menu{
 	margin: auto;
 }
-
 #main_menu input{
 	width: 150px;
 }
-
 #main_menu select{
 	width: 150px;
 }
-
-.tb_size{
+.tb_size0{
+	width: 50px;
+	text-align: center;
+}
+.tb_size1{
+	width: 230px;
+}
+.tb_size3{
 	width: 250px;
 }
+.tb_size4{
+	width: 25px;
+}
+.tb_size10{
+	width: 550px;
+}
+#footer{
+	margin: auto;
+	width: 90%;
+}
+.hide{
+	
+}
+.mjbtn{
+	width: 150px;
+	height: 30px;
+}
+#input td label{
+	width: 100px;
+	font-size: 12px;
+	text-align: left;
+}
+#input td{
+	text-align: right !important;
+}
+#input input{
+	text-align: right !important;
+}
+.input td label{
+	width: 100px;
+	font-size: 12px;
+	text-align: left;
+}
+.input td{
+	text-align: right !important;
+}
+.input input{
+	text-align: right !important;
+	width: 100px;
+}
+#sub{
+	width: 90%;
+	height: 500px;
+	border: 1px solid black;
+	overflow: auto;
+	margin: auto;
+}
+#sub table{
+	margin: auto;
+}
+#sub td{
+	text-align: center;
+}
+#sub input{
+	font-size: 12px;
+}
+.enterbtn{
+	width: 100px;
+	height: 50px;
+	font-size: 20px;
+}
+#anchor{
+	width: 300px;
+	margin: auto;
+	text-align: center;
+}
+#annual{
+	font-size: 8px;
+	word-wrap: break-word;
 
-#inner_main table{
+}
+#annual th{
+	background-color: black;
+	color: white;
+	
+}
+#annual td input{
+	width: 70px;
+	text-align: right;
+}
+#footer{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+.hide{
+	margin: 0 auto;
+}
+.hide tr{
+	min-width: 100px;
+}
+.hide td{
+	min-width: 100px;
+	display: inline-block;
+}
+.main_h{
+	font-size: 20px;
+}
+#atu tr td input{
+	text-align: left;
+}
+.edit{
+	font-size: 15px;
+}
+#annual{
+	overflow: auto;
+}
+#inner_div{
+	overflow: auto;
+}
+#inner_main{
+	height: 500px;
+	overflow: auto;
+}.s_style{
+	width: 150px;
+}
+.disp_tb_size1{
+	width: 230px !important;
+	text-align: left !important;
+}
+#result input{
+	width: 80px;
+}
+.format{
+	text-align: left !important;
+}
+
+#result th{
+		background-color: black;
+		color: white;
+		word-wrap: break-word;
+		border: 3px solid black;
+}
+
+.panel-body form{
 	width: 300px;
 	margin: auto;
 }
 
-#inner_main select{
+.import td{
+
+	text-align: left !important;
+}
+
+.import select{
+
 	width: 150px;
-	margin: auto;
-}
-
-#inner_main2 table{
-	width: 500px;
-	margin: auto;
-}
-
-#inner_main2 select{
-	width: 175px;
-	margin: auto;
-}
-
-#inner_main2 td{
-	/**border: solid 1px black;**/
-}
-
-.first{
-	width: 250px;
-}
-
-.second{
-	width: 250px;
-	text-align: right;
-}
-
-.for_print table{
-	background: white;
-}
-
-td{
-	/**border: solid 1px black;**/
-}
-
-.mid{
-	text-align: center;
-	font-weight: bold;
-}
-
-#footer{
-	width: 90%;
-	margin: auto;
-}
-
-#footer table{
-	width: 100px;
-	margin: auto;
-}
-
-#footer input{
-	width: 130px;
-}
-
-.tb_size_small{
-	width: 80px;
-}
-
-.tb_size_medium{
-	width: 200px;
-}
-
-.tb_size_large{
-	width: 280px;
-}
-
-.tb_size10{
-	width: 550px;
-}
-
-.page-break table{
-	margin: auto;
-	border: solid 1px black;
-}
-
-.page-break td{
-	border: solid 1px black;
 }
 
 .print{
@@ -171,49 +259,54 @@ td{
 	top: 10;
 	height: 50px;
 	width: 100px;
-	margin-right: 50px;
+	margin-right: 10px;
 }
 
-.bold{
-	font-weight: bold;
+th{
+	height: 10px;
+	background: #020066;
+	color:#fff;
 }
 
-.btn{
-	height: 40px;
-	width: 100px;
+#inner_main input{
+	height: 13px;
 }
-
-#list_view{
-	height: 270px;
-	overflow: auto;
-}
-
 @media print{
-	body{
-		background-image: none;
-	}
-	@page {
-	    size: 90mm 250mm; 
-	    margin: 0;/* landscape */
-	    /* you can also specify margins here: */
-	/* for compatibility with both A4 and Letter */
-	  }
-	td{
-		border: solid 1px black;
-		}
 	.page-break{
 		display: block;
 		page-break-before: always;
 	}
-	#main{
-		visibility: hidden;
+	@page {
+	    size: 330mm 130mm; /* landscape */
+	    margin: 0;
+	    padding-top: 50px;
+	    /* you can also specify margins here: */
+	/* for compatibility with both A4 and Letter */
+	  }
+	  html, body {
+		width: 330mm;
+		background-image: none;
+ 	 }
+ 	
+	#result{
+		margin-left: -5px;
 	}
-	.for_print{
-		visibility: visible;
-		display: block;
-		margin-top: 10px;
+	#result td input{
+		width: 50px;
+		height: 24px;
+		margin-top: -5px;
+		margin-bottom: -5px;
+		font-size: 11px;
+		text-align: right;
 	}
-	#footer{
+	th{
+		background-color: gray;
+		color: black;
+		font-size: 12px;
+		width: 55px;
+		word-wrap: break-word;
+	}
+	.hide{
 		visibility: hidden;
 		display: none;
 	}
@@ -221,8 +314,4 @@ td{
 		visibility: hidden;
 		display: none;
 	}
-	*{
-		font-size: 13px;
-	}
-	
 }

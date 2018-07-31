@@ -101,11 +101,12 @@
 											<option>E.M.D.</option>
 											<option>FINANCE</option>
 											<option>J.I.C.A.</option>
-											<option>WEIGHBRIDGE</option>
+											<option>LEGAL</option>
+											<option>MAINTENANCE</option>
 											<option>O.R.D.</option>
 											<option>PLANNING AND DESIGN</option>
 											<option>Q.A.H.D.</option>
-											<option>MAINTENANCE</option>
+											<option>WEIGHBRIDGE</option>
 										</select>
 									</td>
 
@@ -115,22 +116,22 @@
 											<option>{$row['office']}</option>
 											<option>CAR Regional Office</option>
 											<option>Abra DEO</option>
+											<option>Abra Area Equipment Section</option>
 											<option>Apayao First DEO</option>
 											<option>Apayao Second DEO</option>
 											<option>Baguio DEO</option>
+											<option>Benguet Area Equipment Section</option>
 											<option>Benguet First DEO</option>
 											<option>Benguet Second</option>
+											<option>Ifugao Area Equipment Section</option>
 											<option>Ifugao First DEO</option>
 											<option>Ifugao Second DEO</option>
-											<option>Upper Kalinga DEO</option>
-											<option>Lower Kalinga DEO</option>
+											<option>Mountain Province Area Equipment Section</option>
 											<option>Mountain Province First DEO</option>
 											<option>Mountain Province Second DEO</option>
-											<option>Mt. Province Area Equipment Section</option>
-											<option>Benguet Area Equipment Section</option>
-											<option>Abra Area Equipment Section</option>
-											<option>Ifugao Area Equipment Section</option>
 											<option>Kalinga Area Equipment Section</option>
+											<option>Upper Kalinga DEO</option>
+											<option>Lower Kalinga DEO</option>
 										</select>
 									</td>
 
@@ -143,19 +144,19 @@
 							}
 						}
 						?><br>
-					</div>
+						</div>
 
-					<div class="col-md-12" style="margin-left:46%">
-						<button type="submit" class="btn btn-primary" name="submit" value="Update">Update Employee</button>
-					</div>
+						<div class="col-md-12" style="margin-left:45%">
+							<button type="submit" class="btn btn-primary" name="submit" value="Update">Update Employee</button>
+						</div>
+					</div>	
 				</div>
 			</div>
-
 			<?php
 				if (isset($_GET['submit'])) {
 					$id = $_GET['did'];
 					echo "<br>";
-					echo '<h3><center>Data Updated Successfully!!</center></h3>';
+					echo '<h2 style="text-align:center;">Data Updated Successfully!</h2>';
 					echo "<br>";
 				}
 			?>
